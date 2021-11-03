@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditorComponent } from './editor/editor.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ProfileComponent } from './profile/profile.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
