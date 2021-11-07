@@ -1,1 +1,10 @@
-<div class="btn btn-primary">hello</div>
+<div class="container-fluid">
+  <div class="container">
+    <app-header [isCheckLogin]="isCheckLogin"></app-header>
+    <div class="row">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
