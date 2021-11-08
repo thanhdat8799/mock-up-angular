@@ -8,24 +8,28 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   posts = [
     {
+      author: "James",
       time : "2016-02-18T03:22:56.637Z",
       title: "This is title",
       text : "lorem is asdf;ladjsfkalsdf    jasldj lsdfjalsdfjlasjdfjasd fsdj fjdf jladsjf"
 
     },
     {
+      author: "James",
       time : "2016-02-18T03:22:56.637Z",
       title: "This is title",
       text : "lorem is asdf;ladjsfkalsdf    jasldj lsdfjalsdfjlasjdfjasd fsdj fjdf jladsjf"
 
     },
     {
+      author: "James",
       time : "2016-02-18T03:22:56.637Z",
       title: "This is title",
       text : "lorem is asdf;ladjsfkalsdf    jasldj lsdfjalsdfjlasjdfjasd fsdj fjdf jladsjf"
 
     },
     {
+      author: "James",
       time : "2016-02-18T03:22:56.637Z",
       title: "This is title",
       text : "lorem is asdf;ladjsfkalsdf    jasldj lsdfjalsdfjlasjdfjasd fsdj fjdf jladsjf"

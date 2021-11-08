@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { ArticleListComponent } from './home/article-list/article-list.component';
+import { TagListComponent } from './home/tag-list/tag-list.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ArticleListComponent,
+    TagListComponent
   ],
   imports: [
     BrowserModule,

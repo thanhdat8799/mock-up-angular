@@ -6,35 +6,11 @@
       </div>
     <div class="row mt-5">
         <div  class="blog-posts col-8">
-            <div *ngFor='let post of posts' class="post mt-3">
-                <div  class="row">
-                    <div class="col-5">
-                        {{post.time | date}}
-                    </div>
-                    <div class="col-5">
-                        <a class='mr-1 link'>Follow</a>
-                        <a class='mr-1 link'>Like</a>
-                        <a class='mr-1 link'>Favorite</a>
-                    </div>
-                </div>
-            
-                <article class='blog-post'>
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="https://source.unsplash.com/user/erondu/1000x1000" alt="" class=".img-thumbnail img-fluid">
-                        </div>
-                        <div class="col-9">
-                            <h3>{{post.title}}</h3>
-                            <p>{{post.text}}</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
+            <app-article-list [posts]="posts"></app-article-list>
         </div>
     
         <div class="tags col-4">
-            <h3>Tags</h3>
-            <span *ngFor="let tag of tags" class="badge badge-pill badge-primary mr-2">#{{tag}}</span>
+            <app-tag-list [tags]="tags"></app-tag-list>
         </div>
     </div>
 
