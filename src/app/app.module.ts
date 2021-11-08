@@ -4,26 +4,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { LoginModule } from './auth/login-module';
+import { HttpErorrInterceptor } from './core/interceptors/http-erorr.interceptor';
+import { SettingsComponent } from './auth/settings/settings.component';
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    LoginModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,33 @@
+<div class="container">
+    <h2 class = "text-center">Your Setting</h2>
+    <!-- <p class = "text-danger mb-0" *ngIf="errorMessage && errorMessage != ''">{{errorMessage}}</p> -->
+    <form [formGroup]="UpdateUser" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <!-- <label for="exampleInputEmail1">Email address</label> -->
+            <input type="text" class="form-control" formControlName = "image"  placeholder="URL of profile picture">
+        </div>
+        <div class="form-group">
+            <!-- <label for="exampleInputEmail1">Email address</label> -->
+            <input type="text" class="form-control" formControlName = "username"  placeholder="Username">
+            <span class = "text-danger" *ngIf = "UpdateUser.controls.username.errors?.required && UpdateUser.controls.username.touched">Username is required</span>
+        </div>
+        <div class="form-group">
+            <!-- <label for="exampleInputEmail1">Email address</label> -->
+            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Shorts bio about you" formControlName = "bio" rows="6"></textarea>
+        </div>
+        <div class="form-group">
+            <!-- <label for="exampleInputEmail1">Email address</label> -->
+            <input type="text" class="form-control" formControlName = "email"  placeholder="Email">
+            <span class = "text-danger" *ngIf = "UpdateUser.controls.email.errors?.required && UpdateUser.controls.email.touched">Email is required!</span>
+            <span class = "text-danger" *ngIf = "UpdateUser.controls.email.errors?.email && UpdateUser.controls.email.touched">Email is invalid!</span>
+        </div>
+        <div class="form-group">
+            <!-- <label for="exampleInputEmail1">Email address</label> -->
+            <input type="password" class="form-control" formControlName = "password" placeholder="Password">
+            <span class = "text-danger" *ngIf = "UpdateUser.controls.password.errors?.required && UpdateUser.controls.password.touched">Password is required!</span>
+        </div>
+        <button type="submit" class="btn btn-primary w-25 float-right mt-3" [disabled]="UpdateUser.invalid">Update Profile</button>
+    </form>
+    <hr>
+    <button class="btn btn-danger" (click) = "onLogout()">Or click here to logout</button>
+</div>
