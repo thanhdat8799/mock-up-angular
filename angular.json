@@ -34,13 +34,8 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
-=======
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
->>>>>>> auth
             ],
             "scripts": []
           },

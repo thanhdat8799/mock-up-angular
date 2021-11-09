@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    // ArticleListComponent,
+    ArticleListComponent,
     TagListComponent
    ],
    imports: [
