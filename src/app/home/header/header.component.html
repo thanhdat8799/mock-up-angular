@@ -6,15 +6,15 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand text-success" href="#">conduit</a>
     <div class="menu-right ml-auto">
-      <ul class="navbar-nav mt-2 mt-lg-0" *ngIf="!isCheckLogin; else noLogin">
+      <ul class="navbar-nav mt-2 mt-lg-0" *ngIf="isCheckLogin; else noLogin">
         <li class="nav-item" routerLinkActive="active">
           <a routerLink="/home" class="nav-link">Home</a>
         </li>
         <li class="nav-item" routerLinkActive=" active">
-          <a routerLink="/login" class="nav-link">Sign in</a>
+          <a routerLink="/auth/login" class="nav-link">Sign in</a>
         </li>
         <li class="nav-item" routerLinkActive=" active">
-          <a routerLink="/logout" class="nav-link">Sign up</a>
+          <a routerLink="/auth/register" class="nav-link">Sign up</a>
         </li>
       </ul>
     </div>
@@ -31,8 +31,8 @@
         <span>New Article</span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link">
+    <li class="nav-item" routerLinkActive=" active">
+      <a routerLink="/auth/settings" class="nav-link">
         <i class="fa fa-cog mr-1" aria-hidden="true"></i>
         <span>Settings</span>
       </a>
