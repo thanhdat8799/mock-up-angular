@@ -8,7 +8,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginModule } from './auth/login-module';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { HomeModule } from './home/home.module';
-import { ArticleListComponent } from './home/article-list/article-list.component';
+import { HeaderComponent } from './home/header/header.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 
 
@@ -16,6 +17,8 @@ import { ArticleListComponent } from './home/article-list/article-list.component
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

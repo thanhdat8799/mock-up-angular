@@ -5,16 +5,16 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-    children: [
-      {
-        path: '',
-        component: MainComponent,
-      },
-    ],
-  },
+  // {
+  //   path: '',
+  //   component: HomeComponent,
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: MainComponent,
+  //     },
+  //   ],
+  // },
 ];
 
 @NgModule({
