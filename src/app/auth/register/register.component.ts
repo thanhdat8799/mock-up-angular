@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
       }
      }
      this.authService.createUSer(user).subscribe(data => {
-       this.userService.ischeckLogin = true;
+       this.userService.getUpdate(true)
        this.userService.user = data;
        localStorage.setItem('token', this.userService.user.user.token);
        localStorage.setItem('password', user.user.password);

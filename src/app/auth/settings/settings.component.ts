@@ -78,7 +78,8 @@ export class SettingsComponent implements OnInit {
      this.router.navigate(['/']) // Sau khi update sẽ đến profile của user
   }
   onLogout(){
-    this.userService.ischeckLogin = false;
+    // this.userService.ischeckLogin = false;
+    this.userService.getUpdate(false);
     localStorage.setItem('token', '');
     localStorage.setItem('password', '');
     this.userService.user = {

@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand text-success" href="#">conduit</a>
     <div class="menu-right ml-auto">
-      <ul class="navbar-nav mt-2 mt-lg-0" *ngIf="isCheckLogin; else noLogin">
+      <ul class="navbar-nav mt-2 mt-lg-0" *ngIf="!isCheckLogin; else noLogin">
         <li class="nav-item" routerLinkActive="active">
           <a routerLink="/home" class="nav-link">Home</a>
         </li>

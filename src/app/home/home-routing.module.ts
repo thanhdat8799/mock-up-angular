@@ -7,13 +7,7 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    children: [
-      {
-        path: '',
-        component: MainComponent,
-      },
-    ],
+    component: MainComponent,
   },
 ];
 
