@@ -10,10 +10,10 @@
           <a routerLink="/home" class="nav-link">Home</a>
         </li>
         <li class="nav-item" routerLinkActive=" active">
-          <a routerLink="/login" class="nav-link">Sign in</a>
+          <a routerLink="/auth/login" class="nav-link">Sign in</a>
         </li>
         <li class="nav-item" routerLinkActive=" active">
-          <a routerLink="/logout" class="nav-link">Sign up</a>
+          <a routerLink="/auth/register" class="nav-link">Sign up</a>
         </li>
       </ul>
     </div>
@@ -30,8 +30,8 @@
         <span>New Article</span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link">
+    <li class="nav-item" routerLinkActive=" active">
+      <a routerLink="/auth/settings"  class="nav-link">
         <i class="fa fa-cog mr-1" aria-hidden="true"></i>
         <span>Settings</span>
       </a>
