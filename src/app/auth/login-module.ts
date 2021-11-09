@@ -8,9 +8,9 @@ import { SettingsComponent } from "./settings/settings.component";
 
 @NgModule({
    declarations: [
-      RegisterComponent,
-      LoginComponent,
-      SettingsComponent,
+       RegisterComponent,
+       LoginComponent,
+       SettingsComponent,
    ],
    imports: [
        LoginRouterModule,

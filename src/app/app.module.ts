@@ -9,26 +9,16 @@ import { LoginModule } from './auth/login-module';
 import { HttpErorrInterceptor } from './core/interceptors/http-erorr.interceptor';
 import { SettingsComponent } from './auth/settings/settings.component';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
-
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
 import { ArticleListComponent } from './home/article-list/article-list.component';
-import { TagListComponent } from './home/tag-list/tag-list.component';
-import { ProfileComponent } from './profile/profile.component';
-import { EditorComponent } from './editor/editor.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    ArticleListComponent,
-    TagListComponent,
-    ProfileComponent,
-    EditorComponent,
+    ArticleListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +26,7 @@ import { EditorComponent } from './editor/editor.component';
     HttpClientModule,
     ReactiveFormsModule,
     LoginModule,
+    HomeModule
   ],
   providers: [
     {
