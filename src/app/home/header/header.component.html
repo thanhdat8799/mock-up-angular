@@ -1,47 +1,46 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand text-success" href="#">conduit</a>
-      <div class="menu-right ml-auto">
-        <ul class="navbar-nav mt-2 mt-lg-0" *ngIf="isCheckLogin; else noLogin">
-          <li class="nav-item" routerLinkActive="active">
-            <a routerLink="/home" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item" routerLinkActive=" active">
-            <a routerLink="/login" class="nav-link">Sign in</a>
-          </li>
-          <li class="nav-item" routerLinkActive=" active">
-            <a routerLink="/logout" class="nav-link">Sign up</a>
-          </li>
-        </ul>
-      </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand text-success" href="#">conduit</a>
+    <div class="menu-right ml-auto">
+      <ul class="navbar-nav mt-2 mt-lg-0" *ngIf="!isCheckLogin; else noLogin">
+        <li class="nav-item" routerLinkActive="active">
+          <a routerLink="/home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item" routerLinkActive=" active">
+          <a routerLink="/login" class="nav-link">Sign in</a>
+        </li>
+        <li class="nav-item" routerLinkActive=" active">
+          <a routerLink="/logout" class="nav-link">Sign up</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  <ng-template #noLogin>
-    <ul class="navbar-nav mt-2 mt-lg-0">
-      <li class="nav-item" routerLinkActive=" active">
-        <a routerLink="/home" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <i class="fa fa-pencil-square-o mr-1" aria-hidden="true"></i>
-          <span>New Article</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">
-          <i class="fa fa-cog mr-1" aria-hidden="true"></i>
-          <span>Settings</span>
-        </a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a routerLink="/profile" class="nav-link">
-          <i class="fa fa-smile-o mr-1" aria-hidden="true"></i>
-          <span>Profile</span></a>
-      </li>
-    </ul>
+  </div>
+</nav>
+<ng-template #noLogin>
+  <ul class="navbar-nav mt-2 mt-lg-0">
+    <li class="nav-item" routerLinkActive=" active">
+      <a routerLink="/home" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <i class="fa fa-pencil-square-o mr-1" aria-hidden="true"></i>
+        <span>New Article</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+        <i class="fa fa-cog mr-1" aria-hidden="true"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="/profile" class="nav-link">
+        <i class="fa fa-smile-o mr-1" aria-hidden="true"></i>
+        <span>Profile</span></a>
+    </li>
+  </ul>
 </ng-template>
-  
-

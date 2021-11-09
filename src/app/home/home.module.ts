@@ -6,6 +6,7 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home/home.component";
 import { MainComponent } from "./main/main.component";
 import { TagListComponent } from "./tag-list/tag-list.component";
+import { CommonModule } from '@angular/common';
 
 @NgModule({
    declarations: [
@@ -17,7 +18,8 @@ import { TagListComponent } from "./tag-list/tag-list.component";
     TagListComponent
    ],
    imports: [
-       HomeRoutingModule
+       HomeRoutingModule,
+       CommonModule
    ]
 })
 export class HomeModule {
