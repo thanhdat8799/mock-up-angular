@@ -1,33 +1,44 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { AuthComponent } from './auth/auth.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { LoginModule } from './auth/login-module';
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { HomeModule } from './home/home.module';
+import { ArticleListComponent } from './home/article-list/article-list.component';
+import { HeaderComponent } from './home/header/header.component';
+import { FooterComponent} from './home/footer/footer.component';
+import { ArticlesDetailsComponent } from './editor/articles-details/articles-details.component';
+import { CommentDetailsComponent } from './editor/comment-details/comment-details.component';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
-import { EditorComponent } from './editor/editor.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
-    ProfileComponent,
-    EditorComponent
+    ArticlesDetailsComponent,
+    CommentDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    LoginModule,
+    // HomeModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
