@@ -34,12 +34,13 @@ export class LoginComponent implements OnInit {
       }
     }
     this.authService.loginUser(user).subscribe(data => {
-      this.userService.ischeckLogin = true;
+      this.userService.getUpdate(true);
+      localStorage.setItem('login', String(this.userService.ischeckLogin))
       this.userService.user = data;
       console.log(this.userService.user);
       localStorage.setItem('token', this.userService.user.user.token);
       localStorage.setItem('password', user.user.password);
-      this.router.navigate(["/auth/settings"]);
+      this.router.navigate(["/"]);
     }, 
     err => {
       this.errorMessage = "Email or Password is invalid!"

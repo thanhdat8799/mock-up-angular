@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, ReplaySubject } from 'rxjs';
 import { IUSer } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  ischeckLogin: boolean = false;
+  ischeckLogin = new BehaviorSubject<boolean>(false);
   user: IUSer = {
     user: {
       username: "",
@@ -16,7 +17,7 @@ export class UserService {
     }
   };
   constructor() { }
-  // getUpdate(){
-
-  // }
+  getUpdate(checked: boolean){
+    this.ischeckLogin.next(checked);
+  }
 }
