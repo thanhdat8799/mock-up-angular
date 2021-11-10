@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   public isCheckLogin: boolean = true;
+  
   posts = [
     {
       author: "James",
@@ -44,4 +45,12 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleTabClick(global, feed, globalContent, feedContent) {
+    global.classList.toggle("active")
+    feed.classList.toggle("active")
+    globalContent.classList.toggle("show")
+    globalContent.classList.toggle("active")
+    feedContent.classList.toggle("show")
+    feedContent.classList.toggle("active")
+  }
 }
