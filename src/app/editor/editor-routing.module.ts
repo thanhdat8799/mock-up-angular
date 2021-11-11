@@ -4,7 +4,7 @@ import { ArticlesDetailsComponent } from './articles-details/articles-details.co
 
 const routes: Routes = [
   {
-    path: 'article/:name',
+    path: ':name',
     component: ArticlesDetailsComponent,
     pathMatch: 'full'
   },

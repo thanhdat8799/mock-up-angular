@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
 import { MainComponent } from './home/main/main.component';
+import { EditorRoutingModule } from './editor/editor-routing.module';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: "",
     loadChildren: () => import("./home/home-routing.module").then((m)=> m.HomeRoutingModule)
+  },
+  {
+    path: "article",
+    loadChildren: () => import("./editor/editor-routing.module").then((m)=> m.EditorRoutingModule)
   }
 ];
 
