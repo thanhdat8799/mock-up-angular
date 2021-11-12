@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticlesService } from 'src/app/core/services/articles.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-main',
@@ -6,43 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public isCheckLogin: boolean = true;
-  
-  posts = [
-    {
-      author: "James",
-      time : "2016-02-18T03:22:56.637Z",
-      title: "This is title",
-      text : "lorem is asdf;ladjsfkalsdf    jasldj lsdfjalsdfjlasjdfjasd fsdj fjdf jladsjf"
-
-    },
-    {
-      author: "James",
-      time : "2016-02-18T03:22:56.637Z",
-      title: "This is title",
-      text : "lorem is asdf;ladjsfkalsdf    jasldj lsdfjalsdfjlasjdfjasd fsdj fjdf jladsjf"
-
-    },
-    {
-      author: "James",
-      time : "2016-02-18T03:22:56.637Z",
-      title: "This is title",
-      text : "lorem is asdf;ladjsfkalsdf    jasldj lsdfjalsdfjlasjdfjasd fsdj fjdf jladsjf"
-
-    },
-    {
-      author: "James",
-      time : "2016-02-18T03:22:56.637Z",
-      title: "This is title",
-      text : "lorem is asdf;ladjsfkalsdf    jasldj lsdfjalsdfjlasjdfjasd fsdj fjdf jladsjf"
-
-    }
-  ]
-
-  tags= ["react", "angular", "vue"]
-  constructor() { }
+  public isCheckLogin: boolean = false;
+  data: any
+  data1: any
+  posts: any;
+  post1: any
+  tags:any;
+  constructor(private articlesService: ArticlesService,
+    private userService: UserService
+    ) { }
 
   ngOnInit(): void {
+    this.articlesService.getArticlesGlobal().subscribe(data => {this.data = data; this.posts = data.articles});
+    this.articlesService.getTags().subscribe(data => {this.tags = data.tags})
+    this.userService.ischeckLogin.subscribe(data => this.isCheckLogin = data);
+    this.articlesService.getArticleFeed().subscribe(data => {this.data1 = data; this.post1 = this.data1.article})
   }
 
 }
