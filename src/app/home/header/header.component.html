@@ -26,7 +26,7 @@
       <a routerLink="/home" class="nav-link">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link">
+      <a class="nav-link" [routerLink]="['/editor', 'new-articles']" routerLinkActive="router-link-active" >
         <i class="fa fa-pencil-square-o mr-1" aria-hidden="true"></i>
         <span>New Article</span>
       </a>
@@ -37,10 +37,18 @@
         <span>Settings</span>
       </a>
     </li>
-    <li class="nav-item" routerLinkActive="active">
-      <a routerLink="/profile" class="nav-link">
+    <li class="btn-group">
+      <a routerLink="/{{username}}" class="nav-link">
         <i class="fa fa-smile-o mr-1" aria-hidden="true"></i>
-        <span>Profile</span></a>
+        <span>{{username}}</span>
+      </a>
+      <span type="button" class="dropdown-toggle dropdown-toggle-split align-self-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </span>
+      <div class="dropdown-menu">
+        <a routerLink="/auth/settings" class="dropdown-item">Edit Profile Settings</a>
+        <a (click) = "onLogout()" class="dropdown-item" href="#">Logout</a>
+      </div>
     </li>
   </ul>
 </ng-template>
