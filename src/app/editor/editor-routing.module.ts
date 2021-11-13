@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ArticlesDetailsComponent } from './articles-details/articles-details.component';
+import { NewArticlesComponent } from './new-articles/new-articles.component';
 
 const routes: Routes = [
-  {
-    path: ':name',
-    component: ArticlesDetailsComponent,
-    pathMatch: 'full'
-  },
+    {
+        path: 'new-articles',
+        component: NewArticlesComponent
+    }
 ]
 @NgModule({
     imports: [

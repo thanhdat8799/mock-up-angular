@@ -25,3 +25,11 @@ export interface Author {
 export interface ITag {
     tags: string[]
 }
+export interface IArticlePost {
+    article: {
+        title: string
+        description: string
+        body: string
+        tagList?: string[]
+    }
+}
