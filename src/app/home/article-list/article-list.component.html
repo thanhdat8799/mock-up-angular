@@ -20,7 +20,7 @@
        <div class="row">
            <h4 class="ml-3">{{post.title}}</h4>
        </div>
-       <a [routerLink]="['/']" routerLinkActive="router-link-active" >Read More</a>
+       <a [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active" >Read More</a>
     </li>
     
 </ul>
