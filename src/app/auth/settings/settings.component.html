@@ -1,33 +1,68 @@
 <div class="container">
-    <h2 class = "text-center">Your Setting</h2>
-    <!-- <p class = "text-danger mb-0" *ngIf="errorMessage && errorMessage != ''">{{errorMessage}}</p> -->
-    <form [formGroup]="UpdateUser" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <!-- <label for="exampleInputEmail1">Email address</label> -->
-            <input type="text" class="form-control" formControlName = "image"  placeholder="URL of profile picture">
-        </div>
-        <div class="form-group">
-            <!-- <label for="exampleInputEmail1">Email address</label> -->
-            <input type="text" class="form-control" formControlName = "username"  placeholder="Username">
-            <span class = "text-danger" *ngIf = "UpdateUser.controls.username.errors?.required && UpdateUser.controls.username.touched">Username is required</span>
-        </div>
-        <div class="form-group">
-            <!-- <label for="exampleInputEmail1">Email address</label> -->
-            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Shorts bio about you" formControlName = "bio" rows="6"></textarea>
-        </div>
-        <div class="form-group">
-            <!-- <label for="exampleInputEmail1">Email address</label> -->
-            <input type="text" class="form-control" formControlName = "email"  placeholder="Email">
-            <span class = "text-danger" *ngIf = "UpdateUser.controls.email.errors?.required && UpdateUser.controls.email.touched">Email is required!</span>
-            <span class = "text-danger" *ngIf = "UpdateUser.controls.email.errors?.email && UpdateUser.controls.email.touched">Email is invalid!</span>
-        </div>
-        <div class="form-group">
-            <!-- <label for="exampleInputEmail1">Email address</label> -->
-            <input type="password" class="form-control" formControlName = "password" placeholder="Password">
-            <span class = "text-danger" *ngIf = "UpdateUser.controls.password.errors?.required && UpdateUser.controls.password.touched">Password is required!</span>
-        </div>
-        <button type="submit" class="btn btn-primary w-25 float-right mt-3" [disabled]="UpdateUser.invalid">Update Profile</button>
-    </form>
-    <hr>
-    <button class="btn btn-danger" (click) = "onLogout()">Or click here to logout</button>
+  <h2 class="text-center mb-5">Your Setting</h2>
+  <!-- <p class = "text-danger mb-0" *ngIf="errorMessage && errorMessage != ''">{{errorMessage}}</p> -->
+  <form [formGroup]="UpdateUser" (ngSubmit)="onSubmit()">
+    <div class="form-group col-md-12 d-flex py-0 mb-3">
+      <label class="col-md-3 align-self-center mb-0" for="avatar">Avatar :</label>
+      <input #imagePath id="avatar" type="text" class="form-control col-md-9" formControlName="image" placeholder="URL of profile picture">
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6 mx-auto">
+        <img [src]="imagePath.value" class="img-responsive">
+      </div>
+    </div>
+    <div class="form-group col-md-12 d-flex py-0 mb-3">
+      <label class="col-md-3 align-self-center mb-0" for="username">Username :</label>
+      <div class="col-md-9 px-0">
+        <input id="username" type="text" class="form-control" formControlName="username" placeholder="Username">
+        <span class="text-danger"
+          *ngIf="UpdateUser.controls.username.errors?.required && UpdateUser.controls.username.touched">
+          Username is required
+        </span>
+      </div>
+    </div>
+    <div class="form-group col-md-12 d-flex py-0 mb-3">
+      <label class="col-md-3 align-self-center mb-0" for="bio">Bio :</label>
+      <textarea id="bio" class="form-control col-md-9" id="exampleFormControlTextarea1" placeholder="Shorts bio about you"
+        formControlName="bio" rows="6"></textarea>
+    </div>
+    <div class="form-group col-md-12 d-flex py-0 mb-3">
+      <label class="col-md-3 align-self-center mb-0" for="inputEmail">Email address :</label>
+      <div class="col-md-9 px-0">
+        <input id="inputEmail" type="text" class="form-control" formControlName="email" placeholder="Email">
+        <span class="text-danger" *ngIf="UpdateUser.controls.email.errors?.required && UpdateUser.controls.email.touched">
+          Email is required!
+        </span>
+        <span class="text-danger" *ngIf="UpdateUser.controls.email.errors?.email && UpdateUser.controls.email.touched">
+          Email is invalid!
+        </span>
+      </div>
+    </div>
+    <div class="form-group col-md-12 d-flex py-0 mb-3">
+      <label class="col-md-3 align-self-center mb-0" for="password">Password :</label>
+      <div class="col-md-9 px-0">
+        <input id="password" type="password" class="form-control" formControlName="password" placeholder="password">
+        <span class="text-danger" *ngIf="UpdateUser.controls.password.errors?.required && UpdateUser.controls.password.touched">Password is
+          required
+        </span>
+      </div>
+    </div>
+    <div class="form-group col-md-12 d-flex py-0 mb-3">
+      <label class="col-md-3 align-self-center mb-0" for="confirm_password"> Confirm Password :</label>
+      <div class="col-md-9 px-0">
+        <input id="confirm_password" type="password" class="form-control" formControlName="confirm_password" placeholder="confirm_password">
+        <span class="text-danger" *ngIf="UpdateUser.controls.confirm_password.errors?.required && UpdateUser.controls.confirm_password.touched">
+          Confirm Password is required
+        </span>
+        <span class="text-danger" *ngIf="UpdateUser.controls.confirm_password.errors?.confirmedValidator">
+          Password and Confirm Password must be match.
+        </span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary w-25 float-right mt-3" [disabled]="UpdateUser.invalid">Update
+      Profile
+    </button>
+  </form>
+  <hr>
+  <button class="btn btn-danger" (click)="onLogout()">Or click here to logout</button>
 </div>

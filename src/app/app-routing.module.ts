@@ -31,6 +31,10 @@ const routes: Routes = [
   {
     path: "article",
     loadChildren: () => import("./editor/editor-routing.module").then((m)=> m.EditorRoutingModule)
+  },
+  {
+    path: ":name",
+    loadChildren: () => import("./profile/profile-routing.module").then((m)=> m.ProfileRoutingModule)
   }
 ];
 
