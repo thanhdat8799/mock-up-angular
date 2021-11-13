@@ -7,7 +7,10 @@
                 <h2 class="card-title display-4 font-weight-bold">
                     <span href="#" class="text-dark" title="Blog title">{{article.title}}</span>
                   </h2>
-                
+                  <div class="card-text mb-4">
+                    <p class="lead"> {{article.description}}</p>
+                </div>
+
                 <div class="mt-auto d-flex align-items-center pt-2">
                     <div class="mr-3">
                         <img class="d-block img-fluid rounded-circle" [src]="article.author.image"  alt="user">
