@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
+import { ConfirmedValidator } from '../confirmed.validator';
 
 @Component({
   selector: 'app-settings',
@@ -22,7 +23,10 @@ export class SettingsComponent implements OnInit {
       username: ['', Validators.required],
       bio: [''],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      confirm_password: ['', [Validators.required]]
+    }, {
+      validator: ConfirmedValidator('password', 'confirm_password')
     })
    }
 
@@ -59,9 +63,7 @@ export class SettingsComponent implements OnInit {
             email: user1.user[key]
           });
         }
-        
       }
-      
     })
   }
   onSubmit(){
@@ -94,3 +96,4 @@ export class SettingsComponent implements OnInit {
     this.router.navigate(['/']) // Sau khi logout sẽ đến home của user
   }
 }
+

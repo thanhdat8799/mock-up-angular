@@ -1,1 +1,42 @@
-<p>profile works!</p>
+<div class="container container-banner" style="margin-bottom: 150px;">
+  <div class="row banner position-relative" style="background-image: url({{image}});">
+    <div class="row position-absolute px-2 py-1 mx-auto">
+      <div class="thumbnail position-relative p-0">
+        <img class="img-thumbnail rounded-circle" [src]="image" alt="avata">
+        <button class="rounded-circle position-absolute" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-camera" aria-hidden="true"></i></button>
+      </div>
+      <h2 class="text-center mb-0 pt-2">{{username}}</h2>
+      <p class="text-center pb-2">{{bio}}</p>
+    </div>
+  </div>
+</div>
+<div class="container container-articles">
+  <div class="row my-5">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-link active" id="my-articles-tab" data-toggle="tab" href="#my-articles" role="tab" aria-controls="my-articles" aria-selected="true">My Articles</a>
+        <a class="nav-link" id="favorited-articles-tab" data-toggle="tab" href="#favorited-articles" role="tab" aria-controls="favorited-articles" aria-selected="false">Favorited Articles</a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="my-articles" role="tabpanel" aria-labelledby="my-articles-tab">
+        <p>No articles are here... yet.</p>
+      </div>
+      <div class="tab-pane fade" id="favorited-articles" role="tabpanel" aria-labelledby="favorited-articles-tab">
+        <p>No articles are here... yet.</p>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0 position-relative">
+        <img class="show-avata" [src]="image" alt="avata">
+        <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
