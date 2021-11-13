@@ -22,7 +22,11 @@ export class MainComponent implements OnInit {
     this.articlesService.getArticlesGlobal().subscribe(data => {this.data = data; this.posts = data.articles});
     this.articlesService.getTags().subscribe(data => {this.tags = data.tags})
     this.userService.ischeckLogin.subscribe(data => this.isCheckLogin = data);
-    this.articlesService.getArticleFeed().subscribe(data => {this.data1 = data; this.post1 = this.data1.article})
+    this.userService.ischeckLogin.subscribe(data => {
+      if(data == true){
+        this.articlesService.getArticleFeed().subscribe(data => {this.data1 = data; this.post1 = this.data1.article})
+      }
+    })
   }
 
 }
