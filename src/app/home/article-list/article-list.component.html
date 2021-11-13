@@ -1,26 +1,26 @@
-<div *ngFor='let post of posts' class="post mt-4">
-    <div  class="row ">
-        <div class="col-7">
-            <span>By {{post.author}}, {{post.time | date}}</span>
-        </div>
-        <div class="col-5">
-            <a class='mr-1 link'>Follow</a>
-            <a class='mr-1 link'>Like</a>
-            <a class='mr-1 link'>Favorite</a>
-        </div>
-    </div>
-
-    <article class='blog-post mt-2'>
-        <div class="row">
-            <div class="col-3">
-                <img src="https://source.unsplash.com/user/erondu/1000x1000" alt="" class=".img-thumbnail img-fluid">
-            </div>
-            <div class="col-9">
-              <a routerLink="/article/{{post.title}}">
-                <h3>{{post.title}}</h3>
-              </a>
-                <p>{{post.text}}</p>
-            </div>
-        </div>
-    </article>
-</div>
+<ul class="list-group">
+    <li class="list-group-item mb-2" *ngFor="let post of posts">
+       <div class="row">
+           <div class="col-8 d-flex">
+               <div class="image" *ngIf="post.author.image">
+                   <img [src]="post.author.image" alt="" width="50px" height="50px" class = "rounded-circle">
+               </div>
+               <div class="right ml-1">
+                   <p class = "mb-0"><strong>{{post.author.username}}</strong></p>
+                   <small>{{post.createdAt | date}}</small>
+               </div>
+           </div>
+           <div class="col-4">
+               <button class="btn btn-outline-primary float-right">
+                <i class="fas fa-heart"></i>
+                Like
+               </button>
+           </div>
+       </div>
+       <div class="row">
+           <h4 class="ml-3">{{post.title}}</h4>
+       </div>
+       <a [routerLink]="['/']" routerLinkActive="router-link-active" >Read More</a>
+    </li>
+    
+</ul>
