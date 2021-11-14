@@ -11,8 +11,7 @@ const routes: Routes = [
     component: MainComponent,
     // children: [
     //    {
-    //      path: 'global',
-    //      component: ArticleListComponent
+    //      path: ':page',
     //    }
     // ]
   },

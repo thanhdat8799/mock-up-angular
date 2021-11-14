@@ -5,9 +5,11 @@ import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { EditorRoutingModule } from './editor-routing.module';
 import { NewArticlesComponent } from './new-articles/new-articles.component';
+import { EditArticleComponent } from './edit-article/edit-article.component';
 @NgModule({
     declarations: [
-    NewArticlesComponent
+    NewArticlesComponent,
+    EditArticleComponent,
   ],
     imports: [
         CommonModule,

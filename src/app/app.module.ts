@@ -32,7 +32,7 @@ import { EditorModule } from './editor/editor.module';
     ReactiveFormsModule,
     FormsModule,
     LoginModule,
-    // HomeModule
+    HomeModule,
     EditorModule
   ],
   providers: [

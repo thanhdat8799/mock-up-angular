@@ -34,16 +34,18 @@
                </div>
            </div>
            <div class="col-4">
-               <button class="btn btn-outline-primary float-right">
+               <button class="btn btn-outline-primary float-right" [style.backgroundColor]="post.favorited ? '#007bff': ''"
+               [style.color]="post.favorited ? 'white': ''" (click) = "handleLike(post)">
                 <i class="fas fa-heart"></i>
                 Like
+                {{post.favoritesCount}}
                </button>
            </div>
        </div>
        <div class="row">
            <h4 class="ml-3">{{post.title}}</h4>
        </div>
-       <a [routerLink]="['/']" routerLinkActive="router-link-active" >Read More</a>
+       <a [routerLink]="['/articles', post.slug]" routerLinkActive="router-link-active" >Read More</a>
     </li>
     
 </ul>

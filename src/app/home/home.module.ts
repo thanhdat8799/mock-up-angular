@@ -6,13 +6,15 @@ import { HomeComponent } from "./home/home.component";
 import { MainComponent } from "./main/main.component";
 import { TagListComponent } from "./tag-list/tag-list.component";
 import { CommonModule } from '@angular/common';
+import { PagenationComponent } from './pagenation/pagenation.component';
 
 @NgModule({
    declarations: [
     HomeComponent,
     MainComponent,
     ArticleListComponent,
-    TagListComponent
+    TagListComponent,
+    PagenationComponent,
    ],
    imports: [
        HomeRoutingModule,
