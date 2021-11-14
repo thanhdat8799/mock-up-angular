@@ -21,4 +21,13 @@ export class ArticlesService {
   createArticles(article: IArticlePost){
      return this.httpClient.post('http://localhost:3000/api/articles', article)
   }
+  getSingleArticle(slug: string):Observable <any> {
+    return this.httpClient.get(`http://localhost:3000/api/articles/${slug}`)
+  }
+  getFavoriteArticle(username: string):Observable <any> {
+    return this.httpClient.get(`http://localhost:3000/api/articles/?favorited=${username}`)
+  }
+  getMyArticle(username: string):Observable <any> {
+    return this.httpClient.get(`http://localhost:3000/api/articles/?author=${username}`)
+  }
 }

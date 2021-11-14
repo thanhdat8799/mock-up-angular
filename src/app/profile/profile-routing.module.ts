@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './profile.component';
 import { SettingsComponent } from '../auth/settings/settings.component';
+import { ArticleDetailComponent } from '../home/article-detail/article-detail.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'article/:slug',
+    component: ArticleDetailComponent
+  }
 ];
 
 @NgModule({
