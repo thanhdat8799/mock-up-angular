@@ -38,9 +38,6 @@
               "node_modules/prismjs/themes/prism-okaidia.css",
               "src/styles.scss"
             ],
-<<<<<<< HEAD
-            "scripts": []
-=======
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js" ,
               "./node_modules/jquery/dist/jquery.min.js",
@@ -49,7 +46,6 @@
               "node_modules/prismjs/components/prism-csharp.min.js",
               "node_modules/prismjs/components/prism-css.min.js"
             ]
->>>>>>> 85151f676d88d522fe38cd681f877341d1f63c69
           },
           "configurations": {
             "production": {

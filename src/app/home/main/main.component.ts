@@ -8,7 +8,7 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public isCheckLogin: boolean = false;
+  public isCheckLogin: boolean = true;
   data: any
   data1: any
   posts: any;
