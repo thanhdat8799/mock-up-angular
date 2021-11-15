@@ -17,8 +17,15 @@ export class CommentListComponent implements OnInit {
 
   ngOnInit(): void {
     this.commentService.getComments(this.slug).subscribe((data) => {
-      this.comments = data;
+      this.comments = data.comments;
       console.log(this.comments);
+    })
+  }
+  handleDelete(id: string): void {
+    this.commentService.deleteComment(this.slug, id).subscribe((data) => {
+      this.commentService.getComments(this.slug).subscribe((data) => {
+        this.comments = data.comments;
+      })
     })
   }
 }

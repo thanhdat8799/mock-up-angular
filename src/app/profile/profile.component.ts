@@ -19,8 +19,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.authService.getCurrentUser().subscribe((data) => {
       this.username = data.user['username'];
-      this.image = data.user['image'] || this.defaultImg;
-      this.bio = data.user['bio'];
+      this.authService.getProfile(this.username).subscribe((data) => {
+        this.image = data.profile['image'] || this.defaultImg;
+        this.bio = data.profile['bio'];
+      })
     });
   }
 }

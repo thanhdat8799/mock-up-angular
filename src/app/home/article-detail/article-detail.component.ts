@@ -9,8 +9,8 @@ import { ArticlesService } from 'src/app/core/services/articles.service';
   styleUrls: ['./article-detail.component.scss']
 })
 export class ArticleDetailComponent implements OnInit {
-  article ;
-  slug;
+  article: any;
+  slug: any;
   constructor(private articlesService: ArticlesService,
   private route: ActivatedRoute) { }
 
@@ -41,7 +41,7 @@ export class ArticleDetailComponent implements OnInit {
   }
 
   followToggle(){
-    if(!this.article.author.follow) {
+    if(!this.article.author.following) {
       this.articlesService.followUser(this.article.author.username).subscribe(profile => {
         console.log(profile)
         this.article.author.following = !this.article.author.following
@@ -49,7 +49,7 @@ export class ArticleDetailComponent implements OnInit {
     } else {
       this.articlesService.unfollowUser(this.article.author.username).subscribe(profile => {
         console.log(profile)
-        this.article.author.following = !this.article.author.followinging
+        this.article.author.following = !this.article.author.following
       })
     }
   }

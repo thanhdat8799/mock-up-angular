@@ -3,7 +3,6 @@
     <article class="">
       <div class="row  card  border-0 flex-md-row justify-content-between align-items-center card-top">
         <div class="card-body  col-md-8">
-
           <h2 class="card-title display-4 font-weight-bold">
             <span href="#" class="text-dark" title="Blog title">{{article.title}}</span>
           </h2>
@@ -29,8 +28,7 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <div (click)='followToggle()' class="btn btn-outline-primary ">{{article.author.following ? 'Unfollow' :'Follow'}}</div>
-
+              <div (click)='followToggle()' class="btn btn-outline-primary ">{{article.author.following ? 'Following' :'Follow'}}</div>
             </div>
           </div>
         </div>

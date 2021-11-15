@@ -21,4 +21,7 @@ export class AuthService {
   updateUser(user: any): Observable<any>{
     return this.httpClient.put<any>('http://localhost:3000/api/user', user);
   }
+  getProfile(username: string): Observable<any> {
+    return this.httpClient.get<any>(`http://localhost:3000/api/profiles/${username}`)
+  }
 }
