@@ -1,0 +1,14 @@
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.container {
+
+  form {
+    padding-bottom: 150px;
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
