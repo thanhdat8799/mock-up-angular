@@ -1,3 +1,30 @@
 .tags {
-    border-left: 1px solid #c1c1c1;
+  border-left: 1px solid #c1c1c1;
+}
+.container-fluid {
+  .banner {
+    background-image: url("https://www.agencycentral.co.uk/sites/default/files/techbloggers.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 130px 0px;
+  }
+
+}
+.container {
+  margin-bottom: 150px;
+  .nav-tabs {
+    a {
+      color: black;
+      font-size: 24px;
+      border-width: 5px;
+      font-weight: 600;
+    }
+
+    .nav-link.active {
+      color: rgb(93, 185, 0);
+      border-color: #fff #fff rgb(93, 185, 0);
+      border-width: 0px 0x 3px 0px;
+    }
+  }
 }

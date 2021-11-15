@@ -39,10 +39,12 @@
     margin-right: -15px;
     margin-left: -15px;
     flex-direction: column;
-
     .nav-tabs {
       a {
         color: black;
+        font-size: 20px;
+        border-width: 3px;
+        font-weight: 600;
       }
 
       .nav-link.active {
