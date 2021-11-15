@@ -6,14 +6,14 @@ import { MarkdownModule } from 'ngx-markdown';
 import { EditorRoutingModule } from './editor-routing.module';
 import { NewArticlesComponent } from './new-articles/new-articles.component';
 @NgModule({
-    declarations: [
-    NewArticlesComponent
+  declarations: [
+    NewArticlesComponent,
   ],
-    imports: [
-        CommonModule,
-        EditorRoutingModule,
-        FormsModule,
-        MarkdownModule.forRoot(),
-    ]
+  imports: [
+    CommonModule,
+    EditorRoutingModule,
+    FormsModule,
+    MarkdownModule.forRoot(),
+  ],
 })
 export class EditorModule {}
