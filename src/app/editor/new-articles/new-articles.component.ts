@@ -9,7 +9,7 @@ import { ArticlesService } from 'src/app/core/services/articles.service';
   styleUrls: ['./new-articles.component.scss']
 })
 export class NewArticlesComponent implements OnInit {
-  markdown = `## Markdown __rulez__!`
+  markdown ;
   constructor(
     private articlesService: ArticlesService,
     private router: Router
