@@ -24,12 +24,12 @@
         <div class="col4">
           <div class="row">
             <div class="col-12">
-              <div class="btn btn-danger mb-2">Favorite &#9829;</div>
+              <div (click)='favoriteToggle()' class="btn btn-danger mb-2">{{article.favorited ? "Favorited" : "Favorite"}} &#9829;</div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="btn btn-outline-primary ">Follow</div>
+              <div (click)='followToggle()' class="btn btn-outline-primary ">{{article.author.following ? 'Unfollow' :'Follow'}}</div>
 
             </div>
           </div>

@@ -10,9 +10,14 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+    // children: [
+    //    {
+    //      path: ':page',
+    //    }
+    // ]
   },
   {
-    path: 'article/:slug',
+    path: 'articles/:slug',
     component: ArticleDetailComponent
   }
 ];

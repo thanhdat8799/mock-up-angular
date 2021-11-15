@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (localStorage.getItem('token')) {
       this.userService.getUpdate(true);
-      console.log('im run')
+
     }
   }
 }
