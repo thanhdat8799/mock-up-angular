@@ -15,16 +15,19 @@ export class ArticlesService {
   getTags(): Observable<ITag> {
     return this.httpClient.get<ITag>('http://localhost:3000/api/tags')
   }
-  getArticleFeed(){
+  getArticleFeed(): Observable<any>{
     return this.httpClient.get('http://localhost:3000/api/articles/feed')
   }
   createArticles(article: IArticlePost){
      return this.httpClient.post('http://localhost:3000/api/articles', article)
   }
+  getSingleArticle(slug: string):Observable <any> {
+    return this.httpClient.get(`http://localhost:3000/api/articles/${slug}`)
+  }
   getArticleByPage(number: number, offset: number): Observable<IArticles> {
     const url = `http://localhost:3000/api/articles?limit=${number}&offset=${offset}`
     return this.httpClient.get<IArticles>(url)
-  } 
+  }
   getArticleByPage1(number: number, offset: number): Observable<IArticles> {
     const url = `http://localhost:3000/api/articles/feed?limit=${number}&offset=${offset}`
     return this.httpClient.get<IArticles>(url)
@@ -49,13 +52,16 @@ export class ArticlesService {
     const url = `http://localhost:3000/api/articles/${slug}`
     return this.httpClient.put<any>(url, article)
   }
-  getSingleArticle(slug: string):Observable <any> {
-    return this.httpClient.get(`http://localhost:3000/api/articles/${slug}`)
-  }
   getFavoriteArticle(username: string):Observable <any> {
     return this.httpClient.get(`http://localhost:3000/api/articles/?favorited=${username}`)
   }
   getMyArticle(username: string):Observable <any> {
     return this.httpClient.get(`http://localhost:3000/api/articles/?author=${username}`)
+  }
+  followUser(username: string): Observable<any> {
+    return this.httpClient.post(`http://localhost:3000/api/profiles/${username}/follow`, null )
+  }
+  unfollowUser(username: string): Observable<any> {
+    return this.httpClient.delete(`http://localhost:3000/api/profiles/${username}/follow`)
   }
 }
