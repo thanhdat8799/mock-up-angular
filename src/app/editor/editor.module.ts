@@ -7,15 +7,15 @@ import { EditorRoutingModule } from './editor-routing.module';
 import { NewArticlesComponent } from './new-articles/new-articles.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
 @NgModule({
-    declarations: [
+  declarations: [
     NewArticlesComponent,
     EditArticleComponent,
   ],
-    imports: [
-        CommonModule,
-        EditorRoutingModule,
-        FormsModule,
-        MarkdownModule.forRoot(),
-    ]
+  imports: [
+    CommonModule,
+    EditorRoutingModule,
+    FormsModule,
+    MarkdownModule.forRoot(),
+  ],
 })
 export class EditorModule {}

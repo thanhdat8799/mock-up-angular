@@ -8,6 +8,8 @@ import { TagListComponent } from "./tag-list/tag-list.component";
 import { CommonModule } from '@angular/common';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { PagenationComponent } from './pagenation/pagenation.component';
+import { FormsModule } from '@angular/forms';
+import { NewCommentComponent } from '../editor/new-comment/new-comment.component';
 
 @NgModule({
    declarations: [
@@ -17,10 +19,12 @@ import { PagenationComponent } from './pagenation/pagenation.component';
     TagListComponent,
     ArticleDetailComponent,
     PagenationComponent,
+    NewCommentComponent
    ],
    imports: [
        HomeRoutingModule,
        CommonModule,
+       FormsModule,
        MarkdownModule.forRoot(),
    ]
 })

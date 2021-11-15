@@ -1,43 +1,46 @@
 <section class="pt-5 pb-5">
-    <div class="container">
-      <article class="">
-        <div class="row  card  border-0 flex-md-row justify-content-between align-items-center card-top">
-            <div class="card-body  col-md-8">
-                
-                <h2 class="card-title display-4 font-weight-bold">
-                    <span href="#" class="text-dark" title="Blog title">{{article.title}}</span>
-                  </h2>
-                  <div class="card-text mb-4">
-                    <p class="lead"> {{article.description}}</p>
-                </div>
+  <div class="container">
+    <article class="">
+      <div class="row  card  border-0 flex-md-row justify-content-between align-items-center card-top">
+        <div class="card-body  col-md-8">
 
-                <div class="mt-auto d-flex align-items-center pt-2">
-                    <div class="mr-3">
-                        <img class="d-block img-fluid rounded-circle" [src]="article.author.image"  alt="user">
-                    </div>
-                    <div class="d-block">
-                        <div class="font-weight-bold">{{article.author.username}}</div>
-                        <div class="text-grey">{{article.createdAt | date}} · 5 min read</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col4">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="btn btn-danger mb-2">Favorite &#9829;</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="btn btn-outline-primary ">Follow</div>
+          <h2 class="card-title display-4 font-weight-bold">
+            <span href="#" class="text-dark" title="Blog title">{{article.title}}</span>
+          </h2>
+          <div class="card-text mb-4">
+            <p class="lead"> {{article.description}}</p>
+          </div>
 
-                    </div>
-                </div>
+          <div class="mt-auto d-flex align-items-center pt-2">
+            <div class="mr-3">
+              <img class="d-block img-fluid rounded-circle" [src]="article.author.image" alt="user">
             </div>
+            <div class="d-block">
+              <div class="font-weight-bold">{{article.author.username}}</div>
+              <div class="text-grey">{{article.createdAt | date}} · 5 min read</div>
+            </div>
+          </div>
         </div>
-        <div class="row">
-            <markdown  class="mt-5 col-12 variable-binding" [data]="article.body"></markdown>
+        <div class="col4">
+          <div class="row">
+            <div class="col-12">
+              <div (click)='favoriteToggle()' class="btn btn-danger mb-2">{{article.favorited ? "Favorited" : "Favorite"}} &#9829;</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div (click)='followToggle()' class="btn btn-outline-primary ">{{article.author.following ? 'Unfollow' :'Follow'}}</div>
+
+            </div>
+          </div>
         </div>
-      </article>
+      </div>
+      <div class="row">
+        <markdown class="mt-5 col-12 variable-binding" [data]="article.body"></markdown>
+      </div>
+    </article>
+    <div class="row-comment">
+      <app-new-comment></app-new-comment>
+    </div>
   </div>
-  </section>
+</section>

@@ -34,7 +34,12 @@ export class MainComponent implements OnInit {
     this.userService.ischeckLogin.subscribe(data => this.isCheckLogin = data);
     this.userService.ischeckLogin.subscribe(data => {
       if(data == true){
-        this.articlesService.getArticleFeed().subscribe(data => {this.data1 = data; this.post1 = this.data1.article; this.articleCountFeed = this.data1.articlesCount})
+        this.articlesService.getArticleFeed().subscribe(data => {
+          this.data1 = data; 
+          this.post1 = this.data1.articles; 
+          this.articleCountFeed = this.data1.articlesCount;
+          console.log(data)
+        })
       }
     })
   }

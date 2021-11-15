@@ -15,7 +15,7 @@ export class ArticlesService {
   getTags(): Observable<ITag> {
     return this.httpClient.get<ITag>('http://localhost:3000/api/tags')
   }
-  getArticleFeed(){
+  getArticleFeed(): Observable<any>{
     return this.httpClient.get('http://localhost:3000/api/articles/feed')
   }
   createArticles(article: IArticlePost){
@@ -51,5 +51,17 @@ export class ArticlesService {
   updateArticle(article: IArticlePost, slug: string): Observable<any> {
     const url = `http://localhost:3000/api/articles/${slug}`
     return this.httpClient.put<any>(url, article)
+  }
+  getFavoriteArticle(username: string):Observable <any> {
+    return this.httpClient.get(`http://localhost:3000/api/articles/?favorited=${username}`)
+  }
+  getMyArticle(username: string):Observable <any> {
+    return this.httpClient.get(`http://localhost:3000/api/articles/?author=${username}`)
+  }
+  followUser(username): Observable<any> {
+    return this.httpClient.post(`http://localhost:3000/api/profiles/${username}/follow`, null )
+  }
+  unfollowUser(username): Observable<any> {
+    return this.httpClient.delete(`http://localhost:3000/api/profiles/${username}/follow`)
   }
 }
