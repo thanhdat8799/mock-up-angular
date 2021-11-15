@@ -7,12 +7,12 @@
             class="fa fa-camera" aria-hidden="true"></i></button>
       </div>
       <h2 class="text-center mb-0 pt-2">{{username}}</h2>
-      <p class="text-center pb-2">{{bio}}</p>
-      <p *ngIf='!isMe' (click)='followToggle()' class="text-center text-large text-info" style="font-size: 24px; cursor: pointer;">{{profile.following ? "Following" : "Follow"}}</p>
+      <p class="text-center">{{bio}}</p>
+      <p *ngIf='!isMe' (click)='followToggle()' class="text-center text-info" style="font-size: 24px; cursor: pointer;">{{profile.following ? "Following" : "Follow"}}</p>
     </div>
   </div>
 </div>
-<div class="container container-articles">
+<div class="container mt-5 container-articles">
   <div class="row row-tab my-5">
     <nav class="mb-3">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">

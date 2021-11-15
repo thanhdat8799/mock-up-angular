@@ -3,7 +3,9 @@
     <div class="row d-flex justify-content-center">
         <a class = "text-center" [routerLink]="['/auth', 'register']" routerLinkActive="router-link-active" >Need an account?</a>
     </div>
-    <p class = "text-danger mb-0" *ngIf="errorMessage && errorMessage != ''">{{errorMessage}}</p>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMessage && errorMessage != ''">
+        <p class = "text-danger mb-0" >{{errorMessage}}</p>
+    </div>
     <form [formGroup]="signIn" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
