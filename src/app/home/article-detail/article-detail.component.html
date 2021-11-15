@@ -1,47 +1,39 @@
-<section class="pt-5 pb-5">
+<div class="container-fluid border-0">
   <div class="container">
-    <article class="">
-      <div class="row  card  border-0 flex-md-row justify-content-between align-items-center card-top">
-        <div class="card-body  col-md-8">
-          <h2 class="card-title display-4 font-weight-bold">
-            <span href="#" class="text-dark" title="Blog title">{{article.title}}</span>
-          </h2>
-          <div class="card-text mb-4">
-            <p class="lead"> {{article.description}}</p>
-          </div>
-
-          <div class="mt-auto d-flex align-items-center pt-2">
-            <div class="mr-3">
-              <img class="d-block img-fluid rounded-circle" [src]="article.author.image" alt="user">
-            </div>
-            <div class="d-block">
-              <div class="font-weight-bold">{{article.author.username}}</div>
-              <div class="text-grey">{{article.createdAt | date}} · 5 min read</div>
-            </div>
-          </div>
+    <h1 class="card-title text-white font-weight-bold">{{article.title}}</h1>
+    <div class="mt-auto d-flex align-items-center pt-2">
+      <div class="mr-3 thumbnail">
+        <img class="d-block .img-thumbnail rounded-circle" width="80px" height="80px" [src]="article.author.image" alt="user">
+      </div>
+      <div class="d-block">
+        <div class="font-weight-bold text-white">{{article.author.username}}</div>
+        <div class="text-white">{{article.createdAt | date}} · 5 min read</div>
+      </div>
+      <div class="row ml-auto">
+        <div [style.backgroundColor]="article.favorited ? 'red': ''"
+          [style.color]="article.favorited ? 'white': ''" (click)='favoriteToggle()' class="btn btn-outline-danger mr-2">
+          <i class="fas fa-heart"></i>
         </div>
-        <div class="col4">
-          <div class="row">
-            <div class="col-12">
-              <div (click)='favoriteToggle()' class="btn btn-danger mb-2">{{article.favorited ? "Favorited" : "Favorite"}} &#9829;</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div (click)='followToggle()' class="btn btn-outline-primary ">{{article.author.following ? 'Following' :'Follow'}}</div>
-            </div>
-          </div>
+        <div [style.backgroundColor]="article.author.following ? '#007bff': ''"
+          [style.color]="article.favorited ? 'white': ''" (click)='followToggle()' class="btn btn-outline-primary">
+          {{article.author.following ? 'Following' :'Follow'}}
         </div>
       </div>
-      <div class="row">
-        <markdown class="mt-5 col-12 variable-binding" [data]="article.body"></markdown>
-      </div>
-    </article>
+    </div>
+  </div>
+</div>
+  <div class="container pb-5">
+    <div class="my-4">
+      <h3 class="">{{article.description}}</h3>
+    </div>
+    <div class="row">
+      <markdown class="col-12 variable-binding" [data]="article.body"></markdown>
+    </div>
+    <hr>
     <div class="row-comment">
       <app-new-comment></app-new-comment>
     </div>
-    <div class="row list-comment">
+    <div class="row-list-comment">
       <app-comment-list [slug]="slug"></app-comment-list>
     </div>
   </div>
-</section>

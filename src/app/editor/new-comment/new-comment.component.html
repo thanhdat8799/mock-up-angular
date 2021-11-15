@@ -1,14 +1,17 @@
-<div class="container">
+<div class="container mb-4">
   <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <div class="row">
-        <div class="col-md-10">
-          <textarea [(ngModel)]="body" name="body" class="variable-textarea" class="form-control" rows="5"
+        <div class="image col-md-1" *ngIf="image">
+          <img [src]="image" alt="" width="80px" height="80px" class="rounded-circle">
+        </div>
+        <div class="col-md-11 pr-0">
+          <textarea [(ngModel)]="body" name="body" class="variable-textarea" class="form-control" rows="4"
             placeholder="Write a comment"></textarea>
         </div>
-        <div class="col-md-2">
-          <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Add Comment</button>
-        </div>
+      </div>
+      <div class="row mt-2">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary ml-auto">Add Comment</button>
       </div>
     </div>
   </form>

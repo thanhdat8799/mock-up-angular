@@ -24,6 +24,10 @@
       <h5 class="text-dark">{{post.title}}</h5>
       <p class="text-secondary">{{post.description}}</p>
     </a>
+    <!-- <a class="btn btn-secondary" [routerLink]="['/edit', article.id]" routerLinkActive="router-link-active">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      <span>Edit Article</span>
+    </a> -->
     <a class="text-secondary" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">Read More</a>
   </li>
 </ul>
