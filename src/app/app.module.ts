@@ -34,7 +34,7 @@ import { ProfileComponent } from './profile/profile.component';
     ReactiveFormsModule,
     FormsModule,
     LoginModule,
-    // HomeModule
+    HomeModule,
     EditorModule
   ],
   providers: [

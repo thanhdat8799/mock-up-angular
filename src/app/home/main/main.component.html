@@ -22,17 +22,23 @@
 
         </div>
         <div class="tags col-4">
-          <app-tag-list [tags]="tags"></app-tag-list>
+          <app-tag-list [tags]="tags" (searchTags) = "handleTag($event)"></app-tag-list>
         </div>
+      </div>
+      <div class = "row ml-2" *ngIf = "articleCount > 20">
+          <app-pagenation [articleCount] = "articleCount" (indexPage) = "handlePage($event)"></app-pagenation>
       </div>
     </div>
     <div class="tab-pane fade" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
       <div class="row mt-5">
         <div class="blog-posts col-8">
           <app-article-list [posts]="post1"></app-article-list>
+          <div class = "row ml-2" *ngIf = "articleCount > 20">
+             <app-pagenation [articleCount] = "articleCountFeed" (indexPage) = "handlePage1($event)"></app-pagenation>
+          </div>
         </div>
         <div class="tags col-4">
-          <app-tag-list [tags]="tags"></app-tag-list>
+          <app-tag-list [tags]="tags" (searchTags) = "handleTag1($event)"></app-tag-list>
         </div>
       </div></div>
   </div>
