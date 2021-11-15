@@ -15,7 +15,7 @@
           <i class="fas fa-heart"></i>
         </div>
         <div [style.backgroundColor]="article.author.following ? '#007bff': ''"
-          [style.color]="article.favorited ? 'white': ''" (click)='followToggle()' class="btn btn-outline-primary">
+          [style.color]="article.author.following ? 'white': ''" (click)='followToggle()' class="btn btn-outline-primary">
           {{article.author.following ? 'Following' :'Follow'}}
         </div>
       </div>
@@ -30,9 +30,6 @@
       <markdown class="col-12 variable-binding" [data]="article.body"></markdown>
     </div>
     <hr>
-    <div class="row-comment">
-      <app-new-comment></app-new-comment>
-    </div>
     <div class="row-list-comment">
       <app-comment-list [slug]="slug"></app-comment-list>
     </div>
