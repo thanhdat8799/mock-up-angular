@@ -21,19 +21,15 @@ export class EditArticleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.activatedRoute.paramMap.subscribe(params =>{
-    //   const id = params.get('id');
-    //   this.articlesService.getArticleBySlug(id).subscribe(data => {
-    //     this.data = data;
-    //     this.article = data.article;
-    //   })
-    // })
-    this.articlesService.getArticleBySlug('hoc-sinh-ngheo-vuot-kho-ghl9up').subscribe(data => {
+    this.activatedRoute.params.subscribe(params => {
+      this.slug = params['slug'];
+      this.articlesService.getArticleBySlug(this.slug).subscribe(data => {
         this.data = data;
         this.article = data.article;
         this.markdown = this.article.body;
         this.tag = this.article.tagList?.join(';');
       })
+    })
   }
   onSubmit(addArticle: NgForm) {
     console.log(addArticle)
@@ -47,10 +43,8 @@ export class EditArticleComponent implements OnInit {
        }
      }
    console.log(articles);
-   this.articlesService.updateArticle(articles, 'hoc-sinh-ngheo-vuot-kho-ghl9up').subscribe(data => console.log(data));
+   this.articlesService.updateArticle(articles, this.slug).subscribe(data => console.log(data));
    this.router.navigate(['/'])
  }
- handleDelete(){
-   
- }
+ 
 }

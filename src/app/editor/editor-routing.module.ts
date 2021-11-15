@@ -10,7 +10,7 @@ const routes: Routes = [
         component: NewArticlesComponent
     },
     {
-        path: 'edit/:id',
+        path: 'edit/:slug',
         component: EditArticleComponent
     }
 ]

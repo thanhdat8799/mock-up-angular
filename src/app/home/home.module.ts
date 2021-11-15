@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { PagenationComponent } from './pagenation/pagenation.component';
 import { FormsModule } from '@angular/forms';
-import { NewCommentComponent } from '../editor/new-comment/new-comment.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { CommentListComponent } from './comment-list/comment-list.component';
     ArticleListComponent,
     TagListComponent,
     ArticleDetailComponent,
-    NewCommentComponent,
     CommentListComponent,
     PagenationComponent,
    ],

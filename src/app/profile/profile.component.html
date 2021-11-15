@@ -8,6 +8,7 @@
       </div>
       <h2 class="text-center mb-0 pt-2">{{username}}</h2>
       <p class="text-center pb-2">{{bio}}</p>
+      <p *ngIf='!isMe' (click)='followToggle()' class="text-center text-large text-info" style="font-size: 24px; cursor: pointer;">{{profile.following ? "Following" : "Follow"}}</p>
     </div>
   </div>
 </div>
