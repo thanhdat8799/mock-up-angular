@@ -62,6 +62,6 @@ export class ArticlesService {
     return this.httpClient.post(`http://localhost:3000/api/profiles/${username}/follow`, null )
   }
   unfollowUser(username): Observable<any> {
-    return this.httpClient.delete(`http://localhost:3000/api/profiles/${username}/follow`)
+    return this.httpClient.delete<any>(`http://localhost:3000/api/profiles/${username}/follow`)
   }
 }
