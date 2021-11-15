@@ -6,12 +6,11 @@ import { HomeComponent } from "./home/home.component";
 import { MainComponent } from "./main/main.component";
 import { TagListComponent } from "./tag-list/tag-list.component";
 import { CommonModule } from '@angular/common';
-
 import { PagenationComponent } from './pagenation/pagenation.component';
-
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { FormsModule } from '@angular/forms';
 import { NewCommentComponent } from '../editor/new-comment/new-comment.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
 
 
 @NgModule({
@@ -20,10 +19,10 @@ import { NewCommentComponent } from '../editor/new-comment/new-comment.component
     MainComponent,
     ArticleListComponent,
     TagListComponent,
+    ArticleDetailComponent,
+    NewCommentComponent,
     PagenationComponent,
-    ArticleDetailComponent,
-    ArticleDetailComponent,
-    NewCommentComponent
+    CommentListComponent,
    ],
    imports: [
        HomeRoutingModule,

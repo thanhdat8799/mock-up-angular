@@ -9,7 +9,7 @@ import { EditArticleComponent } from './edit-article/edit-article.component';
 @NgModule({
   declarations: [
     NewArticlesComponent,
-    EditArticleComponent
+    EditArticleComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,21 @@
+<ul class="list-group">
+  <li class="list-group-item mb-2" *ngFor="let comment of comments">
+    <div class="row">
+      <div class="col-8 d-flex">
+        <div class="image" *ngIf="comment.author.image">
+          <img [src]="comment.author.image" alt="" width="50px" height="50px" class="rounded-circle">
+        </div>
+        <div class="right ml-1">
+          <a routerLink="{{comment.author.username}}" routerLinkActive="router-link-active" class="mb-0"><strong>{{comment.author.username}}</strong></a>
+          <small>{{comment.createdAt | date}}</small>
+        </div>
+      </div>
+      <div class="col-4">
+        <button>Delete</button>
+      </div>
+    </div>
+    <div class="row">
+      <h4 class="ml-3">{{comment.title}}</h4>
+    </div>
+  </li>
+</ul>
