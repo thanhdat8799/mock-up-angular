@@ -23,30 +23,29 @@
     </article>
 </div> -->
 <ul class="list-group">
-    <li class="list-group-item mb-2" *ngFor="let post of posts">
-       <div class="row">
-           <div class="col-8 d-flex">
-               <div class="image" *ngIf="post.author.image">
-                   <img [src]="post.author.image" alt="" width="50px" height="50px" class = "rounded-circle">
-               </div>
-               <div class="right ml-1">
-                   <p class = "mb-0"><strong>{{post.author.username}}</strong></p>
-                   <small>{{post.createdAt | date}}</small>
-               </div>
-           </div>
-           <div class="col-4">
-               <button class="btn btn-outline-primary float-right" [style.backgroundColor]="post.favorited ? '#007bff': ''"
-               [style.color]="post.favorited ? 'white': ''" (click) = "handleLike(post)">
-                <i class="fas fa-heart"></i>
-                Like
-                {{post.favoritesCount}}
-               </button>
-           </div>
-       </div>
-       <div class="row">
-           <h4 class="ml-3">{{post.title}}</h4>
-       </div>
-       <a [routerLink]="['/articles', post.slug]" routerLinkActive="router-link-active" >Read More</a>
-    </li>
-    
+  <li class="list-group-item mb-2" *ngFor="let post of posts">
+    <div class="row">
+      <div class="col-8 d-flex">
+        <div class="image" *ngIf="post.author.image">
+          <img [src]="post.author.image" alt="" width="50px" height="50px" class="rounded-circle">
+        </div>
+        <div class="right ml-1">
+          <p class="mb-0"><strong>{{post.author.username}}</strong></p>
+          <small>{{post.createdAt | date}}</small>
+        </div>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-outline-primary float-right" [style.backgroundColor]="post.favorited ? '#007bff': ''"
+          [style.color]="post.favorited ? 'white': ''" (click)="handleLike(post)">
+          <i class="fas fa-heart"></i>
+          Like
+          {{post.favoritesCount}}
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <h4 class="ml-3">{{post.title}}</h4>
+    </div>
+    <a [routerLink]="['/articles', post.slug]" routerLinkActive="router-link-active">Read More</a>
+  </li>
 </ul>

@@ -62,6 +62,9 @@ export class MainComponent implements OnInit {
      })
   }
   handleTag1(tag: string){
-    console.log(tag)
+    console.log(tag);
+    this.articlesService.getArticleByTag(tag).subscribe(data => {
+      this.data1 = data; this.post1 = data.articles; this.articleCountFeed = data.articlesCount;
+     })
   }
 }

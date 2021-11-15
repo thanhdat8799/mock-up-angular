@@ -1,13 +1,15 @@
 <div class="container">
-  <form #addComment="ngForm" (ngSubmit)="onSubmit(addComment)">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <div class="row">
-        <div class="col-10">
+        <div class="col-md-10">
           <textarea [(ngModel)]="body" name="body" class="variable-textarea" class="form-control" rows="5"
             placeholder="Write a comment"></textarea>
         </div>
+        <div class="col-md-2">
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Add Comment</button>
+        </div>
       </div>
     </div>
-    <button type="submit" [disabled]="addComment.invalid" class="btn btn-primary">Add Comment</button>
   </form>
 </div>

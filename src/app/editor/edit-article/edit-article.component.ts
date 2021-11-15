@@ -50,5 +50,7 @@ export class EditArticleComponent implements OnInit {
    this.articlesService.updateArticle(articles, 'hoc-sinh-ngheo-vuot-kho-ghl9up').subscribe(data => console.log(data));
    this.router.navigate(['/'])
  }
-
+ handleDelete(){
+   
+ }
 }

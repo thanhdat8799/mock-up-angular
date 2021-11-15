@@ -10,6 +10,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 import { PagenationComponent } from './pagenation/pagenation.component';
 import { FormsModule } from '@angular/forms';
 import { NewCommentComponent } from '../editor/new-comment/new-comment.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
 
 @NgModule({
    declarations: [
@@ -18,8 +19,9 @@ import { NewCommentComponent } from '../editor/new-comment/new-comment.component
     ArticleListComponent,
     TagListComponent,
     ArticleDetailComponent,
+    NewCommentComponent,
+    CommentListComponent,
     PagenationComponent,
-    NewCommentComponent
    ],
    imports: [
        HomeRoutingModule,

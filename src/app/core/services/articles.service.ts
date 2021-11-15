@@ -27,7 +27,7 @@ export class ArticlesService {
   getArticleByPage(number: number, offset: number): Observable<IArticles> {
     const url = `http://localhost:3000/api/articles?limit=${number}&offset=${offset}`
     return this.httpClient.get<IArticles>(url)
-  } 
+  }
   getArticleByPage1(number: number, offset: number): Observable<IArticles> {
     const url = `http://localhost:3000/api/articles/feed?limit=${number}&offset=${offset}`
     return this.httpClient.get<IArticles>(url)
@@ -58,10 +58,10 @@ export class ArticlesService {
   getMyArticle(username: string):Observable <any> {
     return this.httpClient.get(`http://localhost:3000/api/articles/?author=${username}`)
   }
-  followUser(username): Observable<any> {
+  followUser(username: string): Observable<any> {
     return this.httpClient.post(`http://localhost:3000/api/profiles/${username}/follow`, null )
   }
-  unfollowUser(username): Observable<any> {
-    return this.httpClient.delete<any>(`http://localhost:3000/api/profiles/${username}/follow`)
+  unfollowUser(username: string): Observable<any> {
+    return this.httpClient.delete(`http://localhost:3000/api/profiles/${username}/follow`)
   }
 }

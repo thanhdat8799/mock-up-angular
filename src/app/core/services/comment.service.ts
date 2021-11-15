@@ -13,6 +13,10 @@ export class CommentService {
     return this.httpClient.get<IComments>(`http://localhost:3000/api/articles/${slug}/comments`)
   }
   createComment(slug: string, comment: ICommentPost){
-     return this.httpClient.post(`http://localhost:3000/api/articles/${slug}/comments`, comment)
+    return this.httpClient.post(`http://localhost:3000/api/articles/${slug}/comments`, comment)
   }
+  deleteComment(slug: string, id: string){
+    return this.httpClient.delete(`http://localhost:3000/api/articles/${slug}/comments/${id}`)
+  }
+
 }

@@ -9,8 +9,8 @@ import { ArticlesService } from 'src/app/core/services/articles.service';
   styleUrls: ['./article-detail.component.scss']
 })
 export class ArticleDetailComponent implements OnInit {
-  article ;
-  slug;
+  article: any;
+  slug: any;
   constructor(private articlesService: ArticlesService,
   private route: ActivatedRoute) { }
 

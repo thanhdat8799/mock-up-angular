@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="text-center">Create New Article</h2>
+    <h2 class="text-center">Update Article</h2>
     <form #addArticles = 'ngForm' (ngSubmit) = "onSubmit(addArticles)">
         <div class="form-group">
           <label for="title">Title</label>
@@ -34,6 +34,7 @@
           <input type="text" class="form-control" id="tag" [ngModel] = "tag" name = "tag">
         </div>
         <button type="submit" [disabled]="addArticles.invalid" class="btn btn-primary">Update Articles</button>
+        <button (click)='handleDelete()' class="btn btn-danger ml-5">Delete</button>
       </form>
 </div>
 

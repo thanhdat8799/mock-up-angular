@@ -1,0 +1,31 @@
+<ul class="list-group" *ngIf="lengthMyPosts > 0; else noPosts">
+  <li class="list-group-item mb-3" *ngFor="let post of posts">
+    <div class="row">
+      <div class="col-8 d-flex mb-2">
+        <div class="image" *ngIf="post.author.image">
+          <img [src]="post.author.image" alt="" width="50px" height="50px" class="rounded-circle">
+        </div>
+        <div class="right ml-3">
+          <h5 class="mb-0">{{post.author.username}}</h5>
+          <small>{{post.createdAt | date}}</small>
+        </div>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-outline-primary float-right" [style.backgroundColor]="post.favorited ? '#007bff': ''"
+          [style.color]="post.favorited ? 'white': ''" (click)="handleLike(post)">
+          <i class="fas fa-heart"></i>
+          Like
+          {{post.favoritesCount}}
+        </button>
+      </div>
+    </div>
+    <a class="row-content" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">
+      <h5 class="text-dark">{{post.title}}</h5>
+      <p class="text-secondary">{{post.description}}</p>
+    </a>
+    <a class="text-secondary" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">Read More</a>
+  </li>
+</ul>
+<ng-template #noPosts>
+  <p>No articles are here... yet.</p>
+</ng-template>
