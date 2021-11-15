@@ -7,6 +7,7 @@ import { MainComponent } from "./main/main.component";
 import { TagListComponent } from "./tag-list/tag-list.component";
 import { CommonModule } from '@angular/common';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { PagenationComponent } from './pagenation/pagenation.component';
 
 @NgModule({
    declarations: [
@@ -14,7 +15,8 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
     MainComponent,
     ArticleListComponent,
     TagListComponent,
-    ArticleDetailComponent
+    ArticleDetailComponent,
+    PagenationComponent,
    ],
    imports: [
        HomeRoutingModule,
