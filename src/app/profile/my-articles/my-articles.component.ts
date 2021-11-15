@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ArticlesService } from 'src/app/core/services/articles.service';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class MyArticlesComponent implements OnInit {
 
-  username!: string;
+  @Input() username!: string;
   posts: any;
   lengthMyPosts!: number;
   isFavorited: any;
@@ -24,13 +24,10 @@ export class MyArticlesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.authService.getCurrentUser().subscribe((data) => {
-      this.username = data.user['username'];
-      this.articlesService.getMyArticle(this.username).subscribe((data) => {
-        this.posts = data.articles;
-        this.lengthMyPosts = this.posts.length;
-      })
-    });
+    this.articlesService.getMyArticle(this.username).subscribe((data) => {
+      this.posts = data.articles;
+      this.lengthMyPosts = this.posts.length;
+    })
   }
   handleLike(post: any) {
     const slug = post.slug;

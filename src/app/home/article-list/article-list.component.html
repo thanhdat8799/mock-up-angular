@@ -1,27 +1,3 @@
-<!-- <div *ngFor='let post of posts' class="post mt-4">
-    <div  class="row ">
-        <div class="col-7">
-            <span>By {{post.author.username}}, {{post.createdAt | date}}</span>
-        </div>
-        <div class="col-5">
-            <a class='mr-1 link'>Follow</a>
-            <a class='mr-1 link'>Like</a>
-            <a class='mr-1 link'>Favorite</a>
-        </div>
-    </div>
-    <article class='blog-post mt-2'>
-        <div class="row">
-            <div class="col-3">
-                <img src="https://source.unsplash.com/user/erondu/1000x1000" alt="" class=".img-thumbnail img-fluid">
-            </div>
-            <div class="col-9">
-              <a routerLink="/article/{{post.title}}">
-                <h3>{{post.title}}</h3>
-                <p>{{post.body}}</p>
-            </div>
-        </div>
-    </article>
-</div> -->
 <ul class="list-group">
   <li class="list-group-item mb-2" *ngFor="let post of posts">
     <div class="row">
@@ -29,23 +5,25 @@
         <div class="image" *ngIf="post.author.image">
           <img [src]="post.author.image" alt="" width="50px" height="50px" class="rounded-circle">
         </div>
-        <div class="right ml-1">
-          <p class="mb-0"><strong>{{post.author.username}}</strong></p>
+        <div class="right ml-2">
+          <a routerLink="/{{post.author.username}}" class="nav-link h5 px-0 py-0 mb-0" routerLinkActive="router-link-active">
+            {{post.author.username}}
+          </a>
           <small>{{post.createdAt | date}}</small>
         </div>
       </div>
       <div class="col-4">
-        <button class="btn btn-outline-primary float-right" [style.backgroundColor]="post.favorited ? '#007bff': ''"
+        <button class="btn btn-outline-danger float-right" [style.backgroundColor]="post.favorited ? 'red': ''"
           [style.color]="post.favorited ? 'white': ''" (click)="handleLike(post)">
           <i class="fas fa-heart"></i>
-          Like
           {{post.favoritesCount}}
         </button>
       </div>
     </div>
-    <div class="row">
-      <h4 class="ml-3">{{post.title}}</h4>
-    </div>
-    <a [routerLink]="['/articles', post.slug]" routerLinkActive="router-link-active">Read More</a>
+    <a class="row-content" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">
+      <h5 class="text-dark">{{post.title}}</h5>
+      <p class="text-secondary">{{post.description}}</p>
+    </a>
+    <a class="text-secondary" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">Read More</a>
   </li>
 </ul>

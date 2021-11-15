@@ -1,4 +1,4 @@
-<ul class="list-group" *ngIf="lengthFavoPosts > 0; else noPosts">
+<ul class="list-group mb-5" *ngIf="lengthFavoPosts > 0; else noPosts">
   <li class="list-group-item mb-3" *ngFor="let post of posts">
     <div class="row">
       <div class="col-8 d-flex mb-2">
@@ -6,15 +6,16 @@
           <img [src]="post.author.image" alt="" width="50px" height="50px" class="rounded-circle">
         </div>
         <div class="right ml-3">
-          <h5 class="mb-0">{{post.author.username}}</h5>
+          <a routerLink="/{{post.author.username}}" class="nav-link h5 px-0 py-0 mb-0" routerLinkActive="router-link-active">
+            {{post.author.username}}
+          </a>
           <small>{{post.createdAt | date}}</small>
         </div>
       </div>
       <div class="col-4">
-        <button class="btn btn-outline-primary float-right" [style.backgroundColor]="post.favorited ? '#007bff': ''"
+        <button class="btn btn-outline-danger float-right" [style.backgroundColor]="post.favorited ? 'red': ''"
           [style.color]="post.favorited ? 'white': ''" (click)="handleLike(post)">
           <i class="fas fa-heart"></i>
-          Like
           {{post.favoritesCount}}
         </button>
       </div>
