@@ -20,11 +20,11 @@
         </button>
         <button *ngIf='isMe' class="btn btn-outline-secondary mr-2 float-right"   (click)="handleDelete(post)">
           <i class="fas fa-trash"></i>
-          
+
         </button>
         <button *ngIf='isMe' class="btn btn-outline-primary mr-2 float-right"  [routerLink]="['/editor', post.slug]" >
           <i class="fas fa-pencil"></i>
-          
+
         </button>
       </div>
     </div>
