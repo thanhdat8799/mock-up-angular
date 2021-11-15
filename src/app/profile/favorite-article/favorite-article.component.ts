@@ -31,6 +31,15 @@ export class FavoriteArticleComponent implements OnInit {
   }
   handleLike(post: any) {
     const slug = post.slug;
+    // this.articlesService.DeleteFovorited(slug).subscribe(data =>{
+    //   const article = data;
+    //   for(let i = 0; i< this.posts.length; i++){
+    //     if(this.posts[i].slug == article.article.slug){
+    //       this.posts.splice(i, 1);
+    //       break;
+    //     }
+    //   }
+    // })
     this.userService.ischeckLogin.subscribe(data => {
       if(data == false){
         if(confirm("Hãy đăng nhập để có thể like bài viết")){
@@ -57,7 +66,7 @@ export class FavoriteArticleComponent implements OnInit {
             const article = data;
             for(let i = 0; i< this.posts.length; i++){
               if(this.posts[i].slug == article.article.slug){
-                this.posts[i] = article.article;
+                this.posts.splice(i, 1);
                 break;
               }
             }

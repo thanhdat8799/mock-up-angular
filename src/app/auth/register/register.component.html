@@ -1,10 +1,14 @@
 <div class="container">
-  <h2 class="text-center">Sign In</h2>
+  <h2 class="text-center">Sign Up</h2>
   <div class="row d-flex justify-content-center">
     <a class="text-center" [routerLink]="['/auth', 'login']" routerLinkActive="router-link-active">Have an account?</a>
   </div>
-  <p class="text-danger mb-0" *ngIf="errorMessage && errorMessage != ''">{{errorMessage}}</p>
-  <p class="text-danger mb-0" *ngIf="errorMessage1 && errorMessage1 != ''">{{errorMessage1}}</p>
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage && errorMessage != ''">
+    <p class="text-danger mb-0" >{{errorMessage}}</p>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage1 && errorMessage1 != ''">
+    <p class="text-danger mb-0" >{{errorMessage1}}</p>
+  </div>
   <form [formGroup]="signUp" (ngSubmit)="onRegister()">
     <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
@@ -32,7 +36,7 @@
     </div>
     <div class="form-group">
       <label for="confirm_password"> Confirm Password</label>
-      <div class="col-md-9 px-0">
+      <div class="col-md px-0">
         <input id="confirm_password" type="password" class="form-control" formControlName="confirm_password" placeholder="confirm_password">
         <span class="text-danger" *ngIf="signUp.controls.confirm_password.errors?.required && signUp.controls.confirm_password.touched">
           Confirm Password is required
