@@ -10,7 +10,7 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public isCheckLogin: boolean = false;
+  public isCheckLogin: boolean = true;
   data: any
   data1: any
   posts: any;
@@ -57,6 +57,9 @@ export class MainComponent implements OnInit {
      })
   }
   handleTag1(tag: string){
-    console.log(tag)
+    console.log(tag);
+    this.articlesService.getArticleByTag(tag).subscribe(data => {
+      this.data1 = data; this.post1 = data.articles; this.articleCountFeed = data.articlesCount;
+     })
   }
 }

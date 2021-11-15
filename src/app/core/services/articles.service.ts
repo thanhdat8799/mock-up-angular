@@ -49,4 +49,7 @@ export class ArticlesService {
     const url = `http://localhost:3000/api/articles/${slug}`
     return this.httpClient.put<any>(url, article)
   }
+  getSingleArticle(slug: string):Observable <any> {
+    return this.httpClient.get(`http://localhost:3000/api/articles/${slug}`)
+  }
 }

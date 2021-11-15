@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
+import { ConfirmedValidator } from '../confirmed.validator';
 
 @Component({
   selector: 'app-register',
@@ -23,6 +24,9 @@ export class RegisterComponent implements OnInit {
       userName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
+      confirm_password: ['', [Validators.required]]
+    }, {
+      validator: ConfirmedValidator('password', 'confirm_password')
     })
    }
 
