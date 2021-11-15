@@ -23,7 +23,7 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="my-articles" role="tabpanel" aria-labelledby="my-articles-tab">
-        <app-my-articles [username]="username"></app-my-articles>
+        <app-my-articles [isMe]='isMe' [username]="username"></app-my-articles>
       </div>
       <div class="tab-pane fade" id="favorited-articles" role="tabpanel" aria-labelledby="favorited-articles-tab">
         <app-favorite-article [username]="username"></app-favorite-article>

@@ -1,0 +1,25 @@
+.container-fluid {
+  // background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbW9_A0CnIQvEKltmfTS8QtjxcwBfbiVk50A&usqp=CAU");
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
+  background-color: #333333;
+  padding: 50px 0px;
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+
+    .img-thumbnail {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+}
+hr {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

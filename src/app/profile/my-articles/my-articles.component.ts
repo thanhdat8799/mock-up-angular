@@ -12,6 +12,7 @@ import { UserService } from 'src/app/core/services/user.service';
 export class MyArticlesComponent implements OnInit {
 
   @Input() username!: string;
+  @Input() isMe: boolean;
   posts: any;
   lengthMyPosts!: number;
   isFavorited: any;
@@ -64,6 +65,16 @@ export class MyArticlesComponent implements OnInit {
           })
         }
       }
+    })
+  }
+
+  handleDelete(post){
+    this.articlesService.deleteArticle(post.slug).subscribe(data => {
+      console.log("delete success" + data)
+      this.articlesService.getMyArticle(this.username).subscribe((data) => {
+        this.posts = data.articles;
+        this.lengthMyPosts = this.posts.length;
+      })
     })
   }
 }
