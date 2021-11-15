@@ -55,6 +55,19 @@
         border-width: 0px 0x 3px 0px;
       }
     }
+    .tab-pane {
+      li {
+        border-color: #fff #fff gray;
+        .row {
+          .right>a {
+            color: rgb(71, 143, 0);
+          }
+        }
+        .row-content:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
 .modal-body {
