@@ -15,6 +15,7 @@ import { ArticlesDetailsComponent } from './editor/articles-details/articles-det
 import { CommentDetailsComponent } from './editor/comment-details/comment-details.component';
 import { EditorModule } from './editor/editor.module';
 import { ProfileComponent } from './profile/profile.component';
+import { ProfileModule } from './profile/profile.module';
 
 
 
@@ -25,7 +26,6 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     ArticlesDetailsComponent,
     CommentDetailsComponent,
-    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,8 @@ import { ProfileComponent } from './profile/profile.component';
     FormsModule,
     LoginModule,
     HomeModule,
-    EditorModule
+    EditorModule,
+    ProfileModule
   ],
   providers: [
     {

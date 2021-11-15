@@ -35,9 +35,11 @@
         </div>
       </div>
       <div class="col-4">
-        <button class="btn btn-outline-primary float-right">
+        <button class="btn btn-outline-primary float-right" [style.backgroundColor]="post.favorited ? '#007bff': ''"
+          [style.color]="post.favorited ? 'white': ''" (click)="handleLike(post)">
           <i class="fas fa-heart"></i>
           Like
+          {{post.favoritesCount}}
         </button>
       </div>
     </div>
