@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 import { PagenationComponent } from './pagenation/pagenation.component';
 
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { FormsModule } from '@angular/forms';
+import { NewCommentComponent } from '../editor/new-comment/new-comment.component';
 
 
 @NgModule({
@@ -19,11 +21,14 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
     ArticleListComponent,
     TagListComponent,
     PagenationComponent,
-    ArticleDetailComponent
+    ArticleDetailComponent,
+    ArticleDetailComponent,
+    NewCommentComponent
    ],
    imports: [
        HomeRoutingModule,
        CommonModule,
+       FormsModule,
        MarkdownModule.forRoot(),
    ]
 })

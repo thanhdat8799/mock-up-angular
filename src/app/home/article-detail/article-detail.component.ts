@@ -25,8 +25,8 @@ export class ArticleDetailComponent implements OnInit {
         "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
         "following": false
     }
-};
-  slug;
+  };
+  slug!: string;
   constructor(private articlesService: ArticlesService,
   private route: ActivatedRoute) { }
 

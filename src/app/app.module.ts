@@ -14,6 +14,7 @@ import { FooterComponent} from './home/footer/footer.component';
 import { ArticlesDetailsComponent } from './editor/articles-details/articles-details.component';
 import { CommentDetailsComponent } from './editor/comment-details/comment-details.component';
 import { EditorModule } from './editor/editor.module';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -24,6 +25,7 @@ import { EditorModule } from './editor/editor.module';
     FooterComponent,
     ArticlesDetailsComponent,
     CommentDetailsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ import { EditorModule } from './editor/editor.module';
     FormsModule,
     LoginModule,
     HomeModule,
-    EditorModule
+    EditorModule,
   ],
   providers: [
     {

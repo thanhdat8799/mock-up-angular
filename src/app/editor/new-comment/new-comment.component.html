@@ -1,0 +1,13 @@
+<div class="container">
+  <form #addComment="ngForm" (ngSubmit)="onSubmit(addComment)">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-10">
+          <textarea [(ngModel)]="body" name="body" class="variable-textarea" class="form-control" rows="5"
+            placeholder="Write a comment"></textarea>
+        </div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="addComment.invalid" class="btn btn-primary">Add Comment</button>
+  </form>
+</div>

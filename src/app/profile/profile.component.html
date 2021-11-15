@@ -3,7 +3,8 @@
     <div class="row position-absolute px-2 py-1 mx-auto">
       <div class="thumbnail position-relative p-0">
         <img class="img-thumbnail rounded-circle" [src]="image" alt="avata">
-        <button class="rounded-circle position-absolute" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-camera" aria-hidden="true"></i></button>
+        <button class="rounded-circle position-absolute" data-toggle="modal" data-target="#exampleModalCenter"><i
+            class="fa fa-camera" aria-hidden="true"></i></button>
       </div>
       <h2 class="text-center mb-0 pt-2">{{username}}</h2>
       <p class="text-center pb-2">{{bio}}</p>
@@ -11,32 +12,89 @@
   </div>
 </div>
 <div class="container container-articles">
-  <div class="row my-5">
-    <nav>
+  <div class="row row-tab my-5">
+    <nav class="mb-3">
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-link active" id="my-articles-tab" data-toggle="tab" href="#my-articles" role="tab" aria-controls="my-articles" aria-selected="true">My Articles</a>
-        <a class="nav-link" id="favorited-articles-tab" data-toggle="tab" href="#favorited-articles" role="tab" aria-controls="favorited-articles" aria-selected="false">Favorited Articles</a>
+        <a class="nav-link active" id="my-articles-tab" data-toggle="tab" href="#my-articles" role="tab"
+          aria-controls="my-articles" aria-selected="true">My Articles</a>
+        <a class="nav-link" id="favorited-articles-tab" data-toggle="tab" href="#favorited-articles" role="tab"
+          aria-controls="favorited-articles" aria-selected="false">Favorited Articles</a>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="my-articles" role="tabpanel" aria-labelledby="my-articles-tab">
-        <p>No articles are here... yet.</p>
+        <!-- <ul class="list-group" *ngIf="lengthMyPosts > 0; else noPosts">
+          <li class="list-group-item mb-3" *ngFor="let post of myPosts">
+            <div class="row">
+              <div class="col-8 d-flex mb-2">
+                <div class="image">
+                  <img [src]="image" alt="" width="50px" height="50px" class="rounded-circle">
+                </div>
+                <div class="right ml-3">
+                  <h5 class="mb-0">{{username}}</h5>
+                  <small>{{post.createdAt | date}}</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <button class="btn btn-outline-primary float-right">
+                  <i class="fas fa-heart"></i>
+                  Like
+                </button>
+              </div>
+            </div>
+            <a class="row-content" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">
+              <h5 class="text-dark">{{post.title}}</h5>
+              <p class="text-secondary">{{post.description}}</p>
+            </a>
+            <a class="text-secondary" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">Read More</a>
+          </li>
+        </ul> -->
+        <!-- <app-article-list [posts]="myPosts"></app-article-list> -->
       </div>
       <div class="tab-pane fade" id="favorited-articles" role="tabpanel" aria-labelledby="favorited-articles-tab">
+        <ul class="list-group" *ngIf="lengthFavoPosts > 0; else noPosts">
+          <li class="list-group-item mb-3" *ngFor="let post of favoritePosts">
+            <div class="row">
+              <div class="col-8 d-flex mb-2">
+                <div class="image">
+                  <img [src]="image" alt="" width="50px" height="50px" class="rounded-circle">
+                </div>
+                <div class="right ml-3">
+                  <h5 class="mb-0">{{username}}</h5>
+                  <small>{{post.createdAt | date}}</small>
+                </div>
+              </div>
+              <div class="col-4">
+                <button class="btn btn-outline-primary float-right">
+                  <i class="fas fa-heart"></i>
+                  Like
+                </button>
+              </div>
+            </div>
+            <a class="row-content" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">
+              <h5 class="text-dark">{{post.title}}</h5>
+              <p class="text-secondary">{{post.description}}</p>
+            </a>
+            <a class="text-secondary" [routerLink]="['/article', post.slug]" routerLinkActive="router-link-active">Read More</a>
+          </li>
+        </ul>
+      </div>
+      <ng-template #noPosts>
         <p>No articles are here... yet.</p>
+      </ng-template>
     </div>
   </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body p-0 position-relative">
-        <img class="show-avata" [src]="image" alt="avata">
-        <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body p-0 position-relative">
+          <img class="show-avata" [src]="image" alt="avata">
+          <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
