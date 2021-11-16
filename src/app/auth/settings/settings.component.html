@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="form-group col-md-12 d-flex py-0 mb-3">
-      <label class="col-md-3 align-self-center mb-0" for="password">Password :</label>
+      <label class="col-md-3 align-self-center mb-0" for="password">New Password :</label>
       <div class="col-md-9 px-0">
         <input id="password" type="password" class="form-control" formControlName="password" placeholder="password">
         <span class="text-danger" *ngIf="UpdateUser.controls.password.errors?.required && UpdateUser.controls.password.touched">Password is
@@ -50,7 +50,7 @@
     <div class="form-group col-md-12 d-flex py-0 mb-3">
       <label class="col-md-3 align-self-center mb-0" for="confirm_password"> Confirm Password :</label>
       <div class="col-md-9 px-0">
-        <input id="confirm_password" type="password" class="form-control" formControlName="confirm_password" placeholder="confirm_password">
+        <input id="confirm_password" type="password" class="form-control" formControlName="confirm_password" placeholder="confirm password">
         <span class="text-danger" *ngIf="UpdateUser.controls.confirm_password.errors?.required && UpdateUser.controls.confirm_password.touched">
           Confirm Password is required
         </span>

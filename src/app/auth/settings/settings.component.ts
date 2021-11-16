@@ -35,9 +35,9 @@ export class SettingsComponent implements OnInit {
     this.authService.getCurrentUser().subscribe((user) => {
       user1 = user;
       console.log(user1);
-      this.UpdateUser.patchValue({
-        password: localStorage.getItem('password')
-      })
+      // this.UpdateUser.patchValue({
+      //   password: localStorage.getItem('password')
+      // })
       for(let key in user1.user) {
         if(key == 'image'){
           console.log('ok1')
